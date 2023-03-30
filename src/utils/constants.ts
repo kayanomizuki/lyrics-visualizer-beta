@@ -1,6 +1,6 @@
 const ROOT: string = (() => {
   if (process.env.NODE_ENV === "production") {
-    return "https://spotify-connector-beta.vercel.app";
+    return "https://lyrics-visualizer-beta.vercel.app";
   } else if (process.env.NODE_ENV === "development") {
     return "http://localhost:3000";
   } else {
