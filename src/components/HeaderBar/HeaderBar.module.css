@@ -1,0 +1,12 @@
+.HeaderBar {
+  width: 100%;
+  height: 48px;
+  border-bottom: 1px solid var(--c-spotify-white);
+  background-color: var(--c-spotify-black);
+}
+
+.HeaderBar h2 {
+  font-weight: bold;
+  font-size: 1.05rem;
+  text-align: center;
+}

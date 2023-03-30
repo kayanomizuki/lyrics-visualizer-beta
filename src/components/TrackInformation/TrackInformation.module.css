@@ -1,0 +1,31 @@
+.TrackInformation {
+  position: relative;
+  width: 80%;
+  min-height: 100px;
+  margin-top: 12px;
+  margin-bottom: 15px;
+}
+
+.spans {
+  display: flex;
+  flex-direction: column;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.trackName {
+  padding-top: 4px;
+  padding-bottom: 8px;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.artistName {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.albumName {
+  font-weight: 600;
+  font-size: 0.8rem;
+}

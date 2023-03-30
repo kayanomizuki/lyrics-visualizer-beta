@@ -1,0 +1,10 @@
+.FullscreenButton {
+  position: absolute;
+  right: 2px;
+  bottom: 8px;
+}
+
+.FullscreenButton button {
+  border: none;
+  background-color: transparent;
+}

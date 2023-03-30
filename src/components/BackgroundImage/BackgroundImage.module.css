@@ -1,0 +1,11 @@
+.BackgroundImage {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  transition: background ease 2s;
+
+  scale: 1.2;
+  filter: brightness(0.7) blur(50px);
+}
