@@ -1,7 +1,9 @@
 .Canvas {
   width: 100%;
   min-width: inherit;
-  height: 56.25vw;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
   overflow: hidden;
   background-color: black;
 }
@@ -14,11 +16,12 @@
   position: absolute;
   width: inherit;
   min-width: inherit;
-  height: 56.25vw;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
   overflow: hidden;
   color: white;
   font-weight: 800;
-  font-size: 2.4vw;
   font-family: "Yu Mincho Light", "YuMincho", "Yu Mincho", "游明朝",
     "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN",
     "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", "Noto Serif JP", "Noto Serif CJK JP",
@@ -34,20 +37,3 @@
   background-color: transparent;
   text-align: center;
 }
-
-/* 
-.line span {
-  opacity: 0;
-  position: relative;
-  top: 50%;
-          transform: translateY(-50%);
-  width: 20.18em;
-  width: 0;
-  margin: 0 auto;
-  overflow: hidden;
-  font-size: 180%;
-  text-align: center;
-  white-space: nowrap;
-
-  -webkit-transform: translateY(-50%);
-} */

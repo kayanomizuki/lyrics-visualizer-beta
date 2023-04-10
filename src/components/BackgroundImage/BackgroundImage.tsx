@@ -12,6 +12,8 @@ const BackgroundImage: FC<BackgroundImageProps> = (props) => {
   useEffect(() => {
     if (props.url !== undefined) {
       setUrl(props.url);
+    } else {
+      setUrl(props.initUrl);
     }
   }, [props.url]);
 

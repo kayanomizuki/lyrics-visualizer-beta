@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import BackgroundImage from "../BackgroundImage/BackgroundImage";
 import styles from "./LoadingScreen.module.css";
 
 interface LoadingScreenProps {}
@@ -6,7 +7,13 @@ interface LoadingScreenProps {}
 const LoadingScreen: FC<LoadingScreenProps> = (props) => {
   return (
     <div className={styles.LoadingScreen}>
-      <span>loading...</span>
+      <BackgroundImage
+        url={"./NoAlbumImage.png"}
+        initUrl={"./NoAlbumImage.png"}
+      />
+      <div className={styles.contents}>
+        <span>Loading...</span>
+      </div>
     </div>
   );
 };

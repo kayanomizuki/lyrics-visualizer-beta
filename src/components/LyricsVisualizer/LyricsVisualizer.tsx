@@ -20,54 +20,52 @@ const LyricsVisualizer: FC<LyricsVisualizerProps> = memo((props) => {
   const displayRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className={styles.LyricsVisualizer}>
-      <div ref={displayRef} className={styles.display}>
-        {(() => {
-          if (!props.spotifyState.isConnected) {
-            return (
-              <div className={styles.connectingToSpotify}>
-                {"Connecting to Spotify..."}
-              </div>
-            );
-          } else if (props.spotifyState.isStandby) {
-            return (
-              <div className={styles.spotifyisStandby}>
-                {"Standby for music to play on Spotify ;)"}
-              </div>
-            );
-          } else if (props.lyricsState.isLoading) {
-            return (
-              <div className={styles.lyricsIsLoading}>
-                {"Lyrics data is loading..."}
-              </div>
-            );
-          } else if (!props.lyricsState.sourceExists) {
-            return (
-              <div className={styles.lyricsDataNotExists}>
-                {"This track has not exists lyrics data :("}
-              </div>
-            );
-          } else if (!props.lyricsState.isLineSynced) {
-            return (
-              <div className={styles.lyricsLineNotSynced}>
-                {"This track has not synced lyrics line :("}
-              </div>
-            );
-          } else {
-            return (
-              <Suspense fallback="">
-                <Canvas
-                  scenes={props.animationState.scenes}
-                  trackDuration={props.spotifyState.trackDuration}
-                  progressMs={props.spotifyState.trackProgressMs}
-                  isPlaying={props.spotifyState.isPlaying}
-                />
-              </Suspense>
-            );
-          }
-        })()}
-        <Overlay displayRef={displayRef} spotifyState={props.spotifyState} />
-      </div>
+    <div ref={displayRef} className={styles.LyricsVisualizer}>
+      {(() => {
+        if (!props.spotifyState.isConnected) {
+          return (
+            <div className={styles.connectingToSpotify}>
+              {"Connecting to Spotify..."}
+            </div>
+          );
+        } else if (props.spotifyState.isStandby) {
+          return (
+            <div className={styles.spotifyisStandby}>
+              {"Standby for music to play on Spotify ;)"}
+            </div>
+          );
+        } else if (props.lyricsState.isLoading) {
+          return (
+            <div className={styles.lyricsIsLoading}>
+              {"Lyrics data is loading..."}
+            </div>
+          );
+        } else if (!props.lyricsState.sourceExists) {
+          return (
+            <div className={styles.lyricsDataNotExists}>
+              {"This track has not exists lyrics data :("}
+            </div>
+          );
+        } else if (!props.lyricsState.isLineSynced) {
+          return (
+            <div className={styles.lyricsLineNotSynced}>
+              {"This track has not synced lyrics line :("}
+            </div>
+          );
+        } else {
+          return (
+            <Suspense fallback="">
+              <Canvas
+                scenes={props.animationState.scenes}
+                trackDuration={props.spotifyState.trackDuration}
+                progressMs={props.spotifyState.trackProgressMs}
+                isPlaying={props.spotifyState.isPlaying}
+              />
+            </Suspense>
+          );
+        }
+      })()}
+      <Overlay displayRef={displayRef} spotifyState={props.spotifyState} />
     </div>
   );
 });

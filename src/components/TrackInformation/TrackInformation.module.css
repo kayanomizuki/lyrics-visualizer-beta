@@ -1,31 +1,40 @@
 .TrackInformation {
   position: relative;
-  width: 80%;
-  min-height: 100px;
-  margin-top: 12px;
-  margin-bottom: 15px;
+  width: 100%;
+  min-height: 70px;
+  max-height: 100px;
 }
 
-.spans {
+.names {
   display: flex;
   flex-direction: column;
-  padding-top: 8px;
-  padding-bottom: 8px;
 }
 
 .trackName {
-  padding-top: 4px;
-  padding-bottom: 8px;
+  display: -webkit-box;
+  min-height: 60px;
+  overflow: hidden;
   font-weight: 600;
   font-size: 1.5rem;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .artistName {
+  overflow: hidden;
   font-weight: 600;
   font-size: 0.8rem;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
 }
 
 .albumName {
+  overflow: hidden;
   font-weight: 600;
   font-size: 0.8rem;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
 }

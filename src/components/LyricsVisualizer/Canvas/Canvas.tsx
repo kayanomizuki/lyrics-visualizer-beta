@@ -417,7 +417,8 @@ function initFontSize(timeline: gsap.core.Timeline, scene: SceneObject) {
     timeline.set(
       lineSelector,
       {
-        fontSize: 2 + (15 / scene.lines[i].length) * 1.25 + "vw",
+        fontSize: `min(${2 + (15 / scene.lines[i].length) * 1.25}vw, 
+        ${2 + (15 / scene.lines[i].length) * 1.25}vh`,
         letterSpacing: 1 + (20 / scene.lines[i].length / 20) * 10,
       },
       0

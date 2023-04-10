@@ -168,17 +168,25 @@ const LyricsVisualizerRoot: FC<LyricsVisualizerRootProps> = (props) => {
         url={spotifyState.albumImageUrl}
         initUrl={"./NoAlbumImage.png"}
       />
-      <div className={styles.container}>
-        <LyricsVisualizer
-          spotifyState={spotifyState}
-          lyricsState={lyricsState}
-          animationState={animationState}
-        />
-        <TrackInformation spotifyState={spotifyState} />
-        <SeekBar
-          duration={spotifyState.trackDuration}
-          progress={spotifyState.trackProgressMs}
-        />
+      <div className={styles.contents}>
+        <div className={styles.lyricsVisualizer}>
+          <LyricsVisualizer
+            spotifyState={spotifyState}
+            lyricsState={lyricsState}
+            animationState={animationState}
+          />
+        </div>
+        <div className={styles.status}>
+          <div className={styles.trackInformation}>
+            <TrackInformation spotifyState={spotifyState} />
+          </div>
+          <div className={styles.seekBar}>
+            <SeekBar
+              duration={spotifyState.trackDuration}
+              progress={spotifyState.trackProgressMs}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

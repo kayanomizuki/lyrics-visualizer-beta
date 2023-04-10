@@ -1,5 +1,8 @@
 .Overlay {
   position: absolute;
   width: inherit;
+  min-width: inherit;
   height: inherit;
+  min-height: inherit;
+  max-height: inherit;
 }

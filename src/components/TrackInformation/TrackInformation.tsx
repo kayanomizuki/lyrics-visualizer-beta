@@ -17,24 +17,30 @@ const TrackInformation: FC<TrackInformationProps> = (props) => {
   useEffect(() => {
     if (props.spotifyState.albumName !== undefined) {
       setAlbumName(props.spotifyState.albumName);
+    } else {
+      setAlbumName("TrackName");
     }
   }, [props.spotifyState.albumName]);
 
   useEffect(() => {
     if (props.spotifyState.artistName !== undefined) {
       setArtistName(props.spotifyState.artistName);
+    } else {
+      setArtistName("ArtistName");
     }
   }, [props.spotifyState.artistName]);
 
   useEffect(() => {
     if (props.spotifyState.trackName !== undefined) {
       setTrackName(props.spotifyState.trackName);
+    } else {
+      setTrackName("AlbumName");
     }
   }, [props.spotifyState.trackName]);
 
   return (
     <div className={styles.TrackInformation}>
-      <div className={styles.spans}>
+      <div className={styles.names}>
         <span className={styles.trackName}>{`${trackName}`}</span>
         <span className={styles.artistName}>{`${artistName}`}</span>
         <span className={styles.albumName}>{`${albumName}`}</span>

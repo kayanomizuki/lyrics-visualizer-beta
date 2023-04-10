@@ -16,13 +16,11 @@ const SeekBar: FC<SeekBarProps> = (props) => {
 
   return (
     <div className={styles.SeekBar}>
-      <div className={styles.container}>
-        <div className={styles.duration} />
-        <div
-          className={styles.progress}
-          style={{ width: progressRate + "%", maxWidth: 100 + "%" }}
-        />
-      </div>
+      <div className={styles.duration} />
+      <div
+        className={styles.progress}
+        style={{ width: progressRate + "%", maxWidth: 100 + "%" }}
+      />
     </div>
   );
 };

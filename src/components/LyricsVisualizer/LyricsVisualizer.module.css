@@ -1,21 +1,14 @@
 .LyricsVisualizer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 56.25vw;
-  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4);
-}
-
-.display {
-  display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
-  height: 56.25vw;
-  background-color: var(--c-spotify-black);
+  min-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4);
   background-color: black;
 
   -webkit-user-select: none;
@@ -29,9 +22,12 @@
   justify-content: center;
   align-items: center;
   width: inherit;
-  height: 56.25vw;
-  background-color: black;
-  font-size: 3.8vw;
+  min-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
+  background-color: inherit;
+  font-size: 1rem;
 }
 
 .spotifyisStandby {
@@ -39,9 +35,12 @@
   justify-content: center;
   align-items: center;
   width: inherit;
-  height: 56.25vw;
-  background-color: black;
-  font-size: 3.8vw;
+  min-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
+  background-color: inherit;
+  font-size: 1rem;
 }
 
 .lyricsIsLoading {
@@ -49,9 +48,13 @@
   justify-content: center;
   align-items: center;
   width: inherit;
-  height: 56.25vw;
-  background-color: black;
-  font-size: 3.8vw;
+  min-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
+  max-height: inherit;
+  background-color: inherit;
+  font-size: 1rem;
 }
 
 .lyricsDataNotExists {
@@ -59,9 +62,12 @@
   justify-content: center;
   align-items: center;
   width: inherit;
-  height: 56.25vw;
-  background-color: black;
-  font-size: 3.8vw;
+  min-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
+  background-color: inherit;
+  font-size: 1rem;
 }
 
 .lyricsLineNotSynced {
@@ -69,7 +75,10 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 56.25vw;
-  background-color: black;
-  font-size: 3.8vw;
+  min-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  max-height: inherit;
+  background-color: inherit;
+  font-size: 1rem;
 }
