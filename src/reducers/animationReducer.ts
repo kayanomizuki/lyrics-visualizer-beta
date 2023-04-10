@@ -111,12 +111,12 @@ function createScenes(
   for (const scene of scenes) {
     durations.push(scene.durationTime);
   }
-  for (const line of scenes) {
+  for (let index = 0; index < scenes.length; index++) {
     const durationZscore =
-      (line.durationTime - Number(math.mean(durations))) /
+      (scenes[index].durationTime - Number(math.mean(durations))) /
       Number(math.std(durations, "unbiased"));
-    if (durationZscore > 1.5) {
-      line.durationTime = Number(math.quantileSeq(durations, 0.5));
+    if (durationZscore > 1.8 && index > 0) {
+      scenes[index].durationTime = scenes[index - 1].durationTime;
     }
   }
 
