@@ -1,3 +1,4 @@
+import { ROOT } from "@/utils/constants";
 import { MUSIXMATCH_LYRICS_API_URL } from "@/utils/constants";
 import { LyricsObject } from "@/types/type";
 
@@ -13,7 +14,12 @@ export default async function handler(
       typeof req.query.accesstoken === "string"
     ) {
       const response = await fetch(
-        `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}&accesstoken=${req.query.accesstoken}`
+        `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}&accesstoken=${req.query.accesstoken}`,
+        {
+          method: "GET",
+          referrer: `${ROOT}`,
+          referrerPolicy: "no-referrer-when-downgrade",
+        }
       )
         .then((response) => {
           if (!response.ok) {
