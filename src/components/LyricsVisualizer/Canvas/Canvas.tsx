@@ -464,7 +464,7 @@ const Canvas: FC<CanvasProps> = memo((props) => {
             applyFlashAnimation(timeline, scene);
             break;
           case "medium":
-            applyMultiLineWipeAnimation(timeline, scene);
+            applyFlashAnimation(timeline, scene);
             break;
           case "long":
             applyTypewriterAnimation(timeline, scene);
@@ -476,16 +476,16 @@ const Canvas: FC<CanvasProps> = memo((props) => {
       } else if (scene.lines.length >= 2) {
         switch (scene.durationCategory) {
           case "veryShort":
-            applyMultiLineFlashAnimation(timeline, scene);
+            applyMultiLineWipeAnimation(timeline, scene);
             break;
           case "short":
-            applyMultiLineWipeAnimation(timeline, scene);
+            applyMultiLineFlashAnimation(timeline, scene);
             break;
           case "medium":
-            applyMultiLineWipeAnimation(timeline, scene);
+            applyMultiLineFlashAnimation(timeline, scene);
             break;
           case "long":
-            applyMultiLineWipeAnimation(timeline, scene);
+            applyMultiLineTypewriter(timeline, scene);
             break;
           case "veryLong":
             applyMultiLineTypewriter(timeline, scene);
