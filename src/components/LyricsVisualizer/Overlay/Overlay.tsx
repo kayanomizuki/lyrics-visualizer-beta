@@ -11,7 +11,7 @@ interface OverlayProps {
 }
 
 const Overlay: FC<OverlayProps> = memo((props) => {
-  const [isHidden, setIsHidden] = useState<boolean>(false);
+  const [isHidden, setIsHidden] = useState<boolean>(true);
 
   const handleClick = () => {
     (function changeFullscreen() {
