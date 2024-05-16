@@ -19,7 +19,7 @@ export const fetchLyricsSource = async function (
   accessToken: string
 ): Promise<LyricsObject | undefined> {
   const response = await fetch(
-    `${LOCAL_API_MUSIXMATCH_LYRICS_API_URL}/?trackid=${trackId}&accesstoken${accessToken}`
+    `${LOCAL_API_MUSIXMATCH_LYRICS_API_URL}/?trackid=${trackId}&accesstoken=${accessToken}`
   )
     .then((response) => {
       if (!response.ok) {
