@@ -17,9 +17,22 @@ interface FullscreenButtonProps {
   setIsHidden: Dispatch<SetStateAction<boolean>>;
 }
 
+function adjustZoomLevel(displayRef: RefObject<HTMLDivElement>) {
+  const canvasElement = displayRef.current?.getElementsByTagName("div")[0];
+  if (canvasElement) {
+    if (screen.height >= screen.width) {
+      canvasElement.style.zoom = document.fullscreenElement ? 1.5 : 1;
+    } else {
+      canvasElement.style.zoom = document.fullscreenElement ? 2 : 1;
+    }
+  }
+}
+
 const FullscreenButton: FC<FullscreenButtonProps> = (props) => {
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
-  const [screenOrientation, setScreenOrientation] = useState<OrientationType>();
+  const [screenOrientation, setScreenOrientation] = useState<OrientationType>(
+    screen.orientation.type
+  );
 
   const handleClick = () => {
     (function changeFullscreen() {
@@ -63,12 +76,19 @@ const FullscreenButton: FC<FullscreenButtonProps> = (props) => {
     setScreenOrientation(screen.orientation.type);
 
     const handleFullScreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
-      props.setIsHidden(false);
+      setIsFullscreen(Boolean(document.fullscreenElement));
+      adjustZoomLevel(props.displayRef);
+      props.setIsHidden(true);
+    };
+
+    const handleOrientationchange = () => {
+      setScreenOrientation(screen.orientation.type);
+      adjustZoomLevel(props.displayRef);
     };
 
     document.addEventListener("fullscreenchange", handleFullScreenChange);
     document.addEventListener("webkitfullscreenchange", handleFullScreenChange);
+    window.addEventListener("orientationchange", handleOrientationchange);
 
     return () => {
       document.removeEventListener("fullscreenchange", handleFullScreenChange);
@@ -76,6 +96,7 @@ const FullscreenButton: FC<FullscreenButtonProps> = (props) => {
         "webkitfullscreenchange",
         handleFullScreenChange
       );
+      window.removeEventListener("orientationchange", handleOrientationchange);
     };
   }, []);
 
