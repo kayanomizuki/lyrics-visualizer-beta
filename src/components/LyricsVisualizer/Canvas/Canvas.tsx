@@ -464,10 +464,10 @@ const Canvas: FC<CanvasProps> = memo((props) => {
             applyFlashAnimation(timeline, scene);
             break;
           case "medium":
-            applyFlashAnimation(timeline, scene);
+            applyTypewriterAnimation(timeline, scene);
             break;
           case "long":
-            applyTypewriterAnimation(timeline, scene);
+            applyMultiLineWipeAnimation(timeline, scene);
             break;
           case "veryLong":
             applyTypewriterAnimation(timeline, scene);
