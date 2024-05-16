@@ -13,7 +13,7 @@ export default async function handler(
       typeof req.query.accesstoken === "string"
     ) {
       const response = await fetch(
-        `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}&accesstoken${req.query.accesstoken}`
+        `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}&accesstoken=${req.query.accesstoken}`
       )
         .then((response) => {
           if (!response.ok) {
