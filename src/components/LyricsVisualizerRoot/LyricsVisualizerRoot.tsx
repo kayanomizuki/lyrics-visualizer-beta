@@ -77,7 +77,10 @@ const LyricsVisualizerRoot: FC<LyricsVisualizerRootProps> = (props) => {
         const trackId = spotifyState.trackId;
         (async () => {
           lyricsDispatch({ type: "SET_IS_LOADING", isLoading: true });
-          const lyricsSource = await fetchLyricsSource(trackId);
+          const lyricsSource = await fetchLyricsSource(
+            trackId,
+            spotifyWebApi.getAccessToken()
+          );
           lyricsDispatch({ type: "SET_IS_LOADING", isLoading: false });
           if (lyricsSource !== undefined) {
             lyricsDispatch({

@@ -15,10 +15,11 @@ import {
 } from "./constants";
 
 export const fetchLyricsSource = async function (
-  trackId: string
+  trackId: string,
+  accessToken: string
 ): Promise<LyricsObject | undefined> {
   const response = await fetch(
-    `${LOCAL_API_MUSIXMATCH_LYRICS_API_URL}/?trackid=${trackId}`
+    `${LOCAL_API_MUSIXMATCH_LYRICS_API_URL}/?trackid=${trackId}&accesstoken${accessToken}`
   )
     .then((response) => {
       if (!response.ok) {

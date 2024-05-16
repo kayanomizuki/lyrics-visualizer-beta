@@ -8,9 +8,12 @@ export default async function handler(
   res: NextApiResponse<LyricsObject>
 ) {
   if (req.method === "GET") {
-    if (typeof req.query.trackid === "string") {
+    if (
+      typeof req.query.trackid === "string" &&
+      typeof req.query.accesstoken === "string"
+    ) {
       const response = await fetch(
-        `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}`
+        `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}&accesstoken${req.query.accesstoken}`
       )
         .then((response) => {
           if (!response.ok) {
