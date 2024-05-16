@@ -18,12 +18,11 @@ interface FullscreenButtonProps {
 }
 
 function adjustZoomLevel(displayRef: RefObject<HTMLDivElement>) {
-  const canvasElement = displayRef.current?.getElementsByTagName("div")[0];
-  if (canvasElement) {
+  if (displayRef.current) {
     if (screen.height >= screen.width) {
-      canvasElement.style.zoom = document.fullscreenElement ? 1.5 : 1;
+      displayRef.current.style.zoom = document.fullscreenElement ? 1.5 : 1;
     } else {
-      canvasElement.style.zoom = document.fullscreenElement ? 2 : 1;
+      displayRef.current.style.zoom = document.fullscreenElement ? 2 : 1;
     }
   }
 }
