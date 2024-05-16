@@ -16,7 +16,7 @@ export default async function handler(
         `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}&accesstoken=${req.query.accesstoken}`,
         {
           method: "GET",
-          referrer: `${req.url}`,
+          referrer: `https://${req.headers.host}`,
           referrerPolicy: "strict-origin",
         }
       )
