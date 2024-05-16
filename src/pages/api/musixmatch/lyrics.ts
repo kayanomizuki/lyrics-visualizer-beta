@@ -1,4 +1,3 @@
-import { ROOT } from "@/utils/constants";
 import { MUSIXMATCH_LYRICS_API_URL } from "@/utils/constants";
 import { LyricsObject } from "@/types/type";
 
@@ -17,7 +16,7 @@ export default async function handler(
         `${MUSIXMATCH_LYRICS_API_URL}/?trackid=${req.query.trackid}&accesstoken=${req.query.accesstoken}`,
         {
           method: "GET",
-          referrer: `${ROOT}`,
+          referrer: `${req.headers.host}`,
           referrerPolicy: "strict-origin",
         }
       )
