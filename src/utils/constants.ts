@@ -1,4 +1,4 @@
-const ROOT: string = (() => {
+export const ROOT: string = (() => {
   if (process.env.NODE_ENV === "production") {
     return "https://lyrics-visualizer-beta.vercel.app";
   } else if (process.env.NODE_ENV === "development") {
