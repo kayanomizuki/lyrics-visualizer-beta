@@ -18,7 +18,7 @@ export default async function handler(
         {
           method: "GET",
           referrer: `${ROOT}`,
-          referrerPolicy: "strict-origin",
+          referrerPolicy: "no-referrer-when-downgrade",
         }
       )
         .then((response) => {
