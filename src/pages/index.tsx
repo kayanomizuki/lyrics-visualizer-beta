@@ -1,7 +1,25 @@
+import { GetServerSideProps } from "next";
+import nookies from "nookies";
 import Head from "next/head";
 import Link from "next/link";
-
 import styles from "@/styles/Home.module.css";
+import { fetchRefreshedAccessToken } from "@/utils/api";
+import { isRefreshedAccessTokenObject } from "@/types/typeGuards";
+
+interface HomePageProps {
+  existRefreshTokenCookie: boolean;
+}
+
+export const getServerSideProps: GetServerSideProps<HomePageProps> = async (
+  ctx
+) => {
+  nookies.destroy(ctx, "refreshToken");
+  return {
+    props: {
+      existRefreshTokenCookie: nookies.get(ctx).refreshToken !== undefined,
+    },
+  };
+};
 
 const Home = () => {
   return (
