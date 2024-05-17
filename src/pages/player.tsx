@@ -42,19 +42,20 @@ const Player: NextPage<PlayerPageProps> = (props) => {
           router.replace(router.pathname, "");
         }
       })();
-    }
-    if (router.query.code !== undefined) {
-      (async () => {
-        const accessTokenObject = await fetchAccessToken(
-          String(router.query.code)
-        );
-        if (isAccessTokenObject(accessTokenObject)) {
-          setAccessToken(accessTokenObject.access_token);
-          router.replace(router.pathname, "");
-        }
-      })();
     } else {
-      router.replace("/");
+      if (router.query.code !== undefined) {
+        (async () => {
+          const accessTokenObject = await fetchAccessToken(
+            String(router.query.code)
+          );
+          if (isAccessTokenObject(accessTokenObject)) {
+            setAccessToken(accessTokenObject.access_token);
+            router.replace(router.pathname, "");
+          }
+        })();
+      } else {
+        router.replace("/");
+      }
     }
   }, []);
 
