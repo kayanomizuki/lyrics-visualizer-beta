@@ -40,8 +40,6 @@ const Player: NextPage<PlayerPageProps> = (props) => {
         if (isRefreshedAccessTokenObject(refreshedAccessTokenObject)) {
           setAccessToken(refreshedAccessTokenObject.access_token);
           router.replace(router.pathname, "");
-        } else {
-          window.location.replace("/");
         }
       })();
     } else {
